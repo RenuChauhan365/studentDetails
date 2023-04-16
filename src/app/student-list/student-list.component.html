@@ -1,0 +1,71 @@
+
+
+<!--<p>{{arr | json}}</p>-->
+<table border="1" class="table table-hover  m-5">
+	<thead>
+		<tr class="bg-dark text-light">
+			<th class="p-4 fs-3"> ID</th>
+			<th class="p-4 fs-3">Name</th>
+			<th class="p-4 fs-3">Age</th>
+			<th class="p-4 fs-3">Average</th>
+			<th class="p-4 fs-3">Grade</th>
+			<th class="p-4 fs-3">Active</th>
+		</tr>
+	</thead>
+
+	<ng-container *ngFor="let item of arr">
+
+				<tr>
+
+					<td class="fs-3 " >{{item.ID}}</td>
+					<td class="fs-3 " >{{item.Name}}</td>
+					<td  class="fs-3 " >{{item.Age}}</td>
+					<td class="fs-3 " >{{item.Average}}</td>
+					<td  class="fs-3 "   >{{item.Grade}}</td>
+					<td  class="fs-3 " >{{item.Active}}</td>
+				</tr>
+	</ng-container>
+</table>
+
+
+
+<hr>
+
+
+
+
+<!--<p>{{arr | json}}</p>-->
+<table border="1" class="table table-hover  m-5">
+	<thead>
+		<tr class="bg-dark text-light">
+			<th class="p-4 fs-3"> ID</th>
+			<th class="p-4 fs-3">Name</th>
+			<th class="p-4 fs-3">Age</th>
+			<th class="p-4 fs-3">Average</th>
+			<th class="p-4 fs-3">Grade</th>
+			<th class="p-4 fs-3">Active</th>
+		</tr>
+	</thead>
+
+	<ng-container *ngFor="let item of arr |activestatus">
+				<tr>
+					<td class="p-2 fs-3">{{item.ID}}</td>
+					<td class="fs-3 ">{{item.Name}}</td>
+					<td  class="fs-3 ">{{item.Age}}</td>
+					<td  class="fs-3 ">{{item.Average}}</td>
+
+ <td  [ngSwitch]="item.Grade">
+
+	<span *ngSwitchCase="'A'"  class="bg-success ">{{ item.Grade }}</span>
+	<span *ngSwitchCase="'B'"  class="bg-primary">{{ item.Grade }}</span>
+	<span *ngSwitchCase="'C'"  class="bg-warning">{{ item.Grade }}</span>
+	<span *ngSwitchCase="'D'"  class="bg-secondary">{{ item.Grade }}</span>
+	<span *ngSwitchDefault>{{ item.Grade }}</span>
+	</td>
+					<td  class="fs-3 ">{{item.Active}}</td>
+				</tr>
+	</ng-container>
+</table>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
